@@ -1,18 +1,16 @@
-# input 
-gasto  = int(input("Digite el gasto del agua en metros cuadrados: "))
+# input
 
-# processing
+gasto_fijo=10000
 
-if gasto < 50:
-    precio = 10000
-    msj = ("El precio del agua es: ", (precio))
+gast_mensual=int(input("ingrese el gasto mensual del agua: "))
+
+if gast_mensual <=50:
+    costo_agua_mensual=gasto_fijo
 else:
-    if gasto < 200:
-          precio = (gasto - 50) *2000 + 10000
+    if gast_mensual <= 200:
+        costo_agua_mensual=gasto_fijo+2000*(gast_mensual-50)
     else:
-        if gasto >200:
-                precio = (gasto - 50) *3000 +10000
-                msj = ("El precio del agua es: ", (precio))
-        else:
-            precio = (gasto - 50) *2000 + 10000
-    print (msj)
+        costo_agua_mensual=gasto_fijo+3000*(gast_mensual-50)
+
+
+print(costo_agua_mensual)
